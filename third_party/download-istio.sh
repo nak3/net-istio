@@ -39,8 +39,6 @@ function download_istio() {
     DOWNLOAD_URL=https://github.com/istio/istio/releases/download/${ISTIO_VERSION}/${ISTIO_TARBALL}
   fi
 
-  SYSTEM_NAMESPACE="${SYSTEM_NAMESPACE:-"knative-serving"}"
-
   ISTIO_TMP=$(mktemp -d)
   pushd $ISTIO_TMP
   wget --no-check-certificate $DOWNLOAD_URL
