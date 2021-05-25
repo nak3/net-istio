@@ -467,6 +467,8 @@ github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8m
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f/go.mod h1:ZdcZmHo+o7JKHSa8/e818NopupXU1YMK5fe1lsApnBw=
+github.com/nak3/networking v0.0.0-20210525045240-6b6548153f0a h1:k79DQ1+MExTT6rSM8EzQpLwIrJP1H/B50hVbr4vKFYg=
+github.com/nak3/networking v0.0.0-20210525045240-6b6548153f0a/go.mod h1:y7RmP2/dHO/DAC1QmpUtgTVF6/Z8whaL+wjgey+HthU=
 github.com/nats-io/jwt v0.3.0/go.mod h1:fRYCDE99xlTsqUzISS1Bi75UBJ6ljOJQOAAu5VglpSg=
 github.com/nats-io/jwt v0.3.2/go.mod h1:/euKqTS1ZD+zzjYrY7pseZrTtWQSjujC7xjPc8wL6eU=
 github.com/nats-io/nats-server/v2 v2.1.2/go.mod h1:Afk+wRZqkMQs/p45uXdrVLuab3gwv3Z8C4HTBu8GD/k=
@@ -1111,8 +1113,6 @@ k8s.io/utils v0.0.0-20200729134348-d5654de09c73 h1:uJmqzgNWG7XyClnU/mLPBWwfKKF1K
 k8s.io/utils v0.0.0-20200729134348-d5654de09c73/go.mod h1:jPW/WVKK9YHAvNhRxK0md/EJ228hCsBRufyofKtW8HA=
 knative.dev/hack v0.0.0-20210428122153-93ad9129c268 h1:lBIj9Epd9UQ55NEaHzAdY/UZbuaegCdGPKVC2+Z68Q0=
 knative.dev/hack v0.0.0-20210428122153-93ad9129c268/go.mod h1:PHt8x8yX5Z9pPquBEfIj0X66f8iWkWfR0S/sarACJrI=
-knative.dev/networking v0.0.0-20210519080815-4a780203e35b h1:SpkRthEoohiJ2ehCR0EyvI8gyJVV0JnRZPO+Ve9XjjU=
-knative.dev/networking v0.0.0-20210519080815-4a780203e35b/go.mod h1:y7RmP2/dHO/DAC1QmpUtgTVF6/Z8whaL+wjgey+HthU=
 knative.dev/pkg v0.0.0-20210510175900-4564797bf3b7/go.mod h1:fIl4l4OmZodkElyaHoT0LCF5wT+3+P/kinawQ4XlLtE=
 knative.dev/pkg v0.0.0-20210518131015-67897f4ec290 h1:JPptrA2SNKSAqsdzBkS+MTMYhGSOSJWPlu+cGKWNFjM=
 knative.dev/pkg v0.0.0-20210518131015-67897f4ec290/go.mod h1:fIl4l4OmZodkElyaHoT0LCF5wT+3+P/kinawQ4XlLtE=

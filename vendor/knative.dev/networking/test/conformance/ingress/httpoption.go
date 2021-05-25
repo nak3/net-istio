@@ -29,7 +29,9 @@ import (
 
 // TestHTTPOption verifies that the Ingress properly handles HTTPOption field.
 func TestHTTPOption(t *testing.T) {
-	t.Parallel()
+	// net-istio cannot support parallel option as one HTTPOption effects globally.
+	// https://github.com/knative-sandbox/net-istio/issues/637
+	// t.Parallel()
 	ctx, clients := context.Background(), test.Setup(t)
 
 	tests := []struct {
@@ -48,8 +50,9 @@ func TestHTTPOption(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			t.Parallel()
-
+			// net-istio cannot support parallel option as one HTTPOption effects globally.
+			// https://github.com/knative-sandbox/net-istio/issues/637
+			// t.Parallel()
 			checkHTTPOption(ctx, t, clients, test.httpOption, test.codes)
 		})
 	}
