@@ -165,10 +165,15 @@ func (r *Reconciler) reconcileIngress(ctx context.Context, ing *v1alpha1.Ingress
 		gatewayNames[v1alpha1.IngressVisibilityExternalIP].Insert(resources.GetQualifiedGatewayNames(desiredWildcardGateways)...)
 	}
 
-	desiredHTTPServer := resources.MakeHTTPServer(ing.Spec.HTTPOption, []string{"*"})
-	for _, gw := range config.FromContext(ctx).Istio.IngressGateways {
-		if err := r.reconcileHTTPServer(ctx, ing, gw, desiredHTTPServer); err != nil {
-			return err
+	// HTTPProtocol should be effective only when Auto TLS is enabled per its definition.
+	// TODO(zhiminx): figure out a better way to handle HTTP behavior.
+	// https://github.com/knative/serving/issues/6373
+	if config.FromContext(ctx).Network.AutoTLS {
+		desiredHTTPServer := resources.MakeHTTPServer(ing.Spec.HTTPOption, []string{"*"})
+		for _, gw := range config.FromContext(ctx).Istio.IngressGateways {
+			if err := r.reconcileHTTPServer(ctx, ing, gw, desiredHTTPServer); err != nil {
+				return err
+			}
 		}
 	}
 
