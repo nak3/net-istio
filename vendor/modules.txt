@@ -817,7 +817,7 @@ k8s.io/utils/trace
 # knative.dev/hack v0.0.0-20210609124042-e35bcb8f21ec
 ## explicit
 knative.dev/hack
-# knative.dev/networking v0.0.0-20210610043142-ddb4035f00e9
+# knative.dev/networking v0.0.0-20210610043142-ddb4035f00e9 => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6
 ## explicit
 knative.dev/networking/config
 knative.dev/networking/pkg
@@ -943,3 +943,4 @@ sigs.k8s.io/yaml
 # k8s.io/api => k8s.io/api v0.19.7
 # k8s.io/apimachinery => k8s.io/apimachinery v0.19.7
 # k8s.io/client-go => k8s.io/client-go v0.19.7
+# knative.dev/networking => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6
