@@ -22,4 +22,6 @@ replace (
 	k8s.io/api => k8s.io/api v0.19.7
 	k8s.io/apimachinery => k8s.io/apimachinery v0.19.7
 	k8s.io/client-go => k8s.io/client-go v0.19.7
+	knative.dev/networking => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6
+
 )
