@@ -118,7 +118,7 @@ func (r *Reconciler) reconcileIngress(ctx context.Context, ing *v1alpha1.Ingress
 	gatewayNames[v1alpha1.IngressVisibilityExternalIP] = sets.String{}
 
 	ingressGateways := []*v1alpha3.Gateway{}
-	if shouldReconcileTLS(ctx, ing) {
+	if shouldReconcileTLS(ing) {
 		originSecrets, err := resources.GetSecrets(ing, r.secretLister)
 		if err != nil {
 			return err
@@ -377,7 +377,7 @@ func (r *Reconciler) FinalizeKind(ctx context.Context, ing *v1alpha1.Ingress) pk
 }
 
 func (r *Reconciler) reconcileDeletion(ctx context.Context, ing *v1alpha1.Ingress) error {
-	if !shouldReconcileTLS(ctx, ing) {
+	if !shouldReconcileTLS(ing) {
 		return nil
 	}
 
