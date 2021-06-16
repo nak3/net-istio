@@ -41,7 +41,11 @@ func (is *IngressSpec) SetDefaults(ctx context.Context) {
 }
 
 // SetDefaults populates default values in IngressTLS
-func (t *IngressTLS) SetDefaults(ctx context.Context) {}
+func (t *IngressTLS) SetDefaults(ctx context.Context) {
+	// Deprecated, do not use.
+	t.DeprecatedServerCertificate = ""
+	t.DeprecatedPrivateKey = ""
+}
 
 // SetDefaults populates default values in IngressRule
 func (r *IngressRule) SetDefaults(ctx context.Context) {
