@@ -180,9 +180,6 @@ const (
 
 	// EnableMeshPodAddressabilityKey is the config for enabling pod addressability in mesh.
 	EnableMeshPodAddressabilityKey = "enable-mesh-pod-addressability"
-
-	// DefaultExternalSchemeKey is the config for defining the scheme of external URLs.
-	DefaultExternalSchemeKey = "defaultExternalScheme"
 )
 
 // DomainTemplateValues are the available properties people can choose from
@@ -262,10 +259,6 @@ type Config struct {
 	// Consumers like Knative Serving can use this setting to adjust their behavior
 	// accordingly, i.e. to drop fallback solutions for non-pod-addressable systems.
 	EnableMeshPodAddressability bool
-
-	// DefaultExternalScheme defines the scheme used in external URLs if AutoTLS is
-	// not enabled. Defaults to "http".
-	DefaultExternalScheme string
 }
 
 // HTTPProtocol indicates a type of HTTP endpoint behavior
@@ -292,7 +285,6 @@ func defaultConfig() *Config {
 		AutoTLS:                       false,
 		HTTPProtocol:                  HTTPEnabled,
 		AutocreateClusterDomainClaims: true,
-		DefaultExternalScheme:         "http",
 	}
 }
 
@@ -314,7 +306,6 @@ func NewConfigFromMap(data map[string]string) (*Config, error) {
 		cm.AsInt(RolloutDurationKey, &nc.RolloutDurationSecs),
 		cm.AsBool(AutocreateClusterDomainClaimsKey, &nc.AutocreateClusterDomainClaims),
 		cm.AsBool(EnableMeshPodAddressabilityKey, &nc.EnableMeshPodAddressability),
-		cm.AsString(DefaultExternalSchemeKey, &nc.DefaultExternalScheme),
 	); err != nil {
 		return nil, err
 	}

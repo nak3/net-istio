@@ -116,11 +116,10 @@ type IngressSpec struct {
 type HTTPOption string
 
 const (
-	// HTTPOptionEnabled defines that the knative ingress will be able to serve HTTP
-	// connections.
+	// The knative ingress will be able to serve HTTP connections.
 	HTTPOptionEnabled HTTPOption = "Enabled"
-	// HTTPOptionRedirected defines that the knative will return redirection HTTP status
-	// for the clients, asking the clients to redirect their requests to HTTPS.
+	// The knative will return redirection HTTP status for the clients,
+	// asking the clients to redirect their requests to HTTPS.
 	HTTPOptionRedirected HTTPOption = "Redirected"
 )
 
@@ -151,12 +150,17 @@ type IngressTLS struct {
 	SecretName string `json:"secretName,omitempty"`
 
 	// SecretNamespace is the namespace of the secret used to terminate SSL traffic.
-	// If not set the namespace should be assumed to be the same as the Ingress.
-	// If set the secret should have the same namespace as the Ingress otherwise
-	// the behaviour is undefined and not supported.
-	//
-	// +optional
 	SecretNamespace string `json:"secretNamespace,omitempty"`
+
+	// ServerCertificate identifies the certificate filename in the secret.
+	// Defaults to `tls.crt`.
+	// +optional
+	DeprecatedServerCertificate string `json:"serverCertificate,omitempty"`
+
+	// PrivateKey identifies the private key filename in the secret.
+	// Defaults to `tls.key`.
+	// +optional
+	DeprecatedPrivateKey string `json:"privateKey,omitempty"`
 }
 
 // IngressRule represents the rules mapping the paths under a specified host to
