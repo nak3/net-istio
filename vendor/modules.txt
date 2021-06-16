@@ -828,7 +828,7 @@ k8s.io/utils/trace
 # knative.dev/hack v0.0.0-20210614141220-66ab1a098940
 ## explicit
 knative.dev/hack
-# knative.dev/networking v0.0.0-20210615114921-e291c8011a20
+# knative.dev/networking v0.0.0-20210615114921-e291c8011a20 => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6
 ## explicit
 knative.dev/networking/config
 knative.dev/networking/pkg
@@ -951,3 +951,4 @@ knative.dev/pkg/webhook/resourcesemantics/defaulting
 sigs.k8s.io/structured-merge-diff/v4/value
 # sigs.k8s.io/yaml v1.2.0
 sigs.k8s.io/yaml
+# knative.dev/networking => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6

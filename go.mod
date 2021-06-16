@@ -16,3 +16,5 @@ require (
 	knative.dev/networking v0.0.0-20210615114921-e291c8011a20
 	knative.dev/pkg v0.0.0-20210615143321-77ff8d962c73
 )
+
+replace knative.dev/networking => github.com/nak3/networking v0.0.0-20210606025713-fae9d1e249c6
